@@ -33,8 +33,6 @@ for ($i=0; $i < $dataCount; $i++) {
     array_push($billy, (int)$data->questions[$i]->mark);
 }
 
-var_dump($billy[0]);
-
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -64,7 +62,7 @@ var_dump($billy[0]);
                 <input type="text" class="form-control mb-2" id="inlineFormInput4"  name="question4" placeholder="0 ou 1">
             </div>
             <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
             </div>
         </div>
     </form>
@@ -73,9 +71,6 @@ var_dump($billy[0]);
     $qo2 = $_POST['question2'];
     $qo3 = $_POST['question3'];
     $qo4 = $_POST['question4'];
-
-
-    print("<center>Réponse 1 : $qo1 Réponse 2 : $qo2 Réponse 3 : $qo3 Réponse 4 : $qo4</center>");
     ?>
     <table class="table">
         <thead>
@@ -84,7 +79,7 @@ var_dump($billy[0]);
                 <th scope="col">Note du test</th>
                 <th scope="col">Note de l'entretien</th>
                 <th scope="col">Note globale</th>
-                <th scope="col">WTF!</th>
+                <th scope="col">Commentaire</th>
             </tr>
         </thead>
         <tbody>
@@ -93,7 +88,7 @@ var_dump($billy[0]);
                 <td><?php echo $billy[0]; ?></td>
                 <td><?php echo $qo1; ?></td>
                 <td><?php echo $c1=(0.23*$billy[0]+0.77*$qo1); ?></td>
-                <td><?php if ($c1>=0.5){echo "Bien";} else {echo "Pas bien";} ?></td>
+                <td><?php if ($c1>=0.5){echo "Bien";} else {echo "Pas Bien";} ?></td>
 
             </tr>
             <tr>
@@ -101,21 +96,21 @@ var_dump($billy[0]);
                 <td><?php echo $billy[1]; ?></td>
                 <td><?php echo $qo2; ?></td>
                 <td><?php echo $c2=(0.89*$billy[0]+0.11*$qo1); ?></td>
-                <td><?php if ($c2>=0.5){echo "Bien";} else {echo "Pas bien";} ?></td>
+                <td><?php if ($c2>=0.5){echo "Bien";} else {echo "Pas Bien";} ?></td>
             </tr>
             <tr>
                 <th scope="row">Question 3</th>
                 <td><?php echo $billy[2]; ?></td>
                 <td><?php echo $qo3; ?></td>
                 <td><?php echo $c3=(0.52*$billy[0]+0.48*$qo1); ?></td>
-                <td><?php if ($c3>=0.5){echo "Bien";} else {echo "Pas bien";} ?></td>
+                <td><?php if ($c3>=0.5){echo "Bien";} else {echo "Pas Bien";} ?></td>
             </tr>
             <tr>
                 <th scope="row">Question 4</th>
                 <td><?php echo $billy[3]; ?></td>
                 <td><?php echo $qo4; ?></td>
                 <td><?php echo $c4=(0.34*$billy[0]+0.66*$qo1); ?></td>
-                <td><?php if ($c4>=0.5){echo "Bien";} else {echo "Pas bien";} ?></td>
+                <td><?php if ($c4>=0.5){echo "Bien";} else {echo "Pas Bien";} ?></td>
             </tr>
             <tr>
                 <th scope="row">Résultat</th>
